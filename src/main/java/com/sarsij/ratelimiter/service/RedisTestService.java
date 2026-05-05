@@ -1,4 +1,4 @@
-package com.sarsij.distributed_rate_limiter.service;
+package com.sarsij.ratelimiter.service;
 
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;

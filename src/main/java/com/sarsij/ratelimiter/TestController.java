@@ -1,4 +1,4 @@
-package com.sarsij.distributed_rate_limiter;
+package com.sarsij.ratelimiter;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

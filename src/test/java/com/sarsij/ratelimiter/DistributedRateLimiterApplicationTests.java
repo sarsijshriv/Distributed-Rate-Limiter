@@ -1,4 +1,4 @@
-package com.sarsij.distributed_rate_limiter;
+package com.sarsij.ratelimiter;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

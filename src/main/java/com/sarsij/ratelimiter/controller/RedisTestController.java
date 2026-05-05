@@ -1,6 +1,6 @@
-package com.sarsij.distributed_rate_limiter.controller;
+package com.sarsij.ratelimiter.controller;
 
-import com.sarsij.distributed_rate_limiter.service.RedisTestService;
+import com.sarsij.ratelimiter.service.RedisTestService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
