@@ -6,6 +6,7 @@ import com.sarsij.ratelimiter.key.RateLimitKeyBuilder;
 import com.sarsij.ratelimiter.limiter.ApiKeyLimiterChain;
 import com.sarsij.ratelimiter.limiter.RateLimiter;
 import com.sarsij.ratelimiter.limiter.RateLimiterChain;
+import com.sarsij.ratelimiter.store.TokenBucketStore;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,10 +17,12 @@ import java.util.List;
 public class RateLimitController {
     private final RequestContextFactory requestContextFactory;
     private final RateLimiterChain rateLimiter;
+    private final TokenBucketStore store;
 
-    public RateLimitController(RequestContextFactory requestContextFactory, RateLimitKeyBuilder keyBuilder){
+    public RateLimitController(RequestContextFactory requestContextFactory, RateLimitKeyBuilder keyBuilder, TokenBucketStore store){
         this.requestContextFactory = requestContextFactory;
-        this.rateLimiter = new RateLimiterChain(List.of(new ApiKeyLimiterChain(keyBuilder)));
+        this.rateLimiter = new RateLimiterChain(List.of(new ApiKeyLimiterChain(keyBuilder, store)));
+        this.store = store;
     }
 
     @GetMapping("/check")
