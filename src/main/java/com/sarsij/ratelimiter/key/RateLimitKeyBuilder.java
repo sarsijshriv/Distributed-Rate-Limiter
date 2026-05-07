@@ -1,9 +1,11 @@
 package com.sarsij.ratelimiter.key;
 
 import com.sarsij.ratelimiter.context.RequestContext;
+import lombok.Getter;
 import org.springframework.stereotype.Component;
 
 @Component
+@Getter
 public class RateLimitKeyBuilder {
     private static final String PREFIX = "rate_limit:";
 
