@@ -11,6 +11,6 @@ server:
 
 rate-limiter:
   api-key:
-    capacity: 10
-    refill-tokens: 10
-    refill-duration-millis: 60000
+    capacity: 1000
+    refill-tokens: 1000
+    refill-duration-millis: 1000

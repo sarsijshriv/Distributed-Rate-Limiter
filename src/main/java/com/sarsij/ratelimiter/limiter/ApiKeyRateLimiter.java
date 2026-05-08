@@ -28,7 +28,6 @@ public class ApiKeyRateLimiter implements RateLimiter{
 
     @Override
     public boolean allow(RequestContext context) {
-        System.out.println(capacity);
         String key = keyBuilder.apiKey(context);
         return store.tryConsume(key, capacity, refillTokens, refillDurationMillis);
     }
