@@ -14,3 +14,18 @@ rate-limiter:
     capacity: 1000
     refill-tokens: 1000
     refill-duration-millis: 1000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,prometheus
+
+  endpoint:
+    health:
+      show-details: always
+
+  prometheus:
+    metrics:
+      export:
+        enabled: true
